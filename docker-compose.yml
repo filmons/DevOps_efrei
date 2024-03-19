@@ -1,0 +1,22 @@
+version: '3'
+services:
+  phpmyadmin:
+    image: phpmyadmin:latest
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
+    restart: always
+
+  mariadb:
+    image: mariadb:latest
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=my-secret-pw
+      - MYSQL_DATABASE=matomo
+
+  dockerized-react:
+    image: dockerized-react
+    ports:
+      - 3000:3000
+    restart: always

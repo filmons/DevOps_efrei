@@ -1,0 +1,9 @@
+ 1702  sudo docker build -t nginx .
+ 1703  docker run nginx
+ 1704  docker run --name some-mysql -p 3302:80  -d nginx
+ 1705  sudo docker build -t php .
+
+
+
+ docker build -t your-image-name .
+docker run -p 3000:3000 --name your-container-name your-image-name
